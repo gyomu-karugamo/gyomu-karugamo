@@ -94,9 +94,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .hero-title .hl{color:var(--green);position:relative;}
 .hero-title .hl::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:2px;background:var(--green-mid);border-radius:2px;opacity:.5;}
 .hero-sub{font-size:.97rem;color:var(--brown-mid);margin:20px 0 12px;line-height:2;}
-.hero-checks{margin-bottom:28px;}
-.hero-check{display:flex;align-items:center;gap:9px;font-size:.84rem;color:var(--brown-mid);margin-bottom:7px;}
-.hero-check::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
 .btn-p{background:var(--green);color:white;padding:15px 34px;border-radius:8px;font-size:.93rem;font-weight:500;text-decoration:none;transition:all .25s;box-shadow:0 6px 20px rgba(74,124,111,.25);}
 .btn-p:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 12px 28px rgba(74,124,111,.35);}
@@ -166,23 +163,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .sec-title{font-family:'Noto Serif JP',serif;font-weight:900;font-size:clamp(1.5rem,2.8vw,2rem);line-height:1.55;color:var(--brown);margin-bottom:13px;}
 .sec-lead{font-size:.965rem;color:var(--brown-mid);line-height:1.95;max-width:520px;}
 
-/* PAIN - キャラクター画像を大きく・右寄せで重ねる */
+/* PAIN */
 .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;}
 .pain-card{
   background:white;border-radius:12px;padding:30px 24px 26px;
   border:1px solid rgba(196,168,130,.2);
   position:relative;overflow:hidden;
-  min-height:240px;
+  min-height:180px;
 }
 .pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);}
 .pain-kamo{
   position:absolute;bottom:-8px;right:-8px;
-  width:96px;height:96px;object-fit:contain;
-  opacity:.18;pointer-events:none;
-}
-.pain-kamo-main{
-  width:72px;height:72px;object-fit:contain;
-  margin-bottom:16px;display:block;
+  width:100px;height:100px;object-fit:contain;
+  opacity:.15;pointer-events:none;
 }
 .pain-quote{font-family:'Noto Serif JP',serif;font-size:.92rem;font-weight:700;color:var(--brown);margin-bottom:10px;line-height:1.6;}
 .pain-body{font-size:.82rem;color:var(--brown-mid);line-height:1.85;position:relative;z-index:1;}
@@ -317,12 +310,7 @@ footer{background:var(--brown);padding:38px 40px;text-align:center;}
         <span class="hl">立派な「業務」</span>です。<br>
         <span style="font-size:clamp(1.2rem,2.2vw,1.65rem);color:var(--brown-mid);font-weight:400;">だから、ちゃんと管理しよう。</span>
       </h1>
-      <p class="hero-sub fu fu3">自分のタスクとパートナーへのお願いを一画面で管理。<br>パートナーにはLINEで届いて、完了もLINEで報告。<br><strong style="color:var(--brown);">パートナーはアプリ不要です。</strong></p>
-      <div class="hero-checks fu fu3">
-        <div class="hero-check">自分担当・パートナー担当を分けて管理</div>
-        <div class="hero-check">パートナーのLINEにタスクが届く・完了もLINEで報告</div>
-        <div class="hero-check">月末に負担レポートが自動生成</div>
-      </div>
+      <p class="hero-sub fu fu3">自分のタスクとパートナーへのお願いを一画面で管理。<br>パートナーのLINEに届いて、完了もLINEで報告。<br><strong style="color:var(--brown);">パートナーはアプリ不要です。</strong></p>
       <div class="hero-btns fu fu4">
         <a href="https://app.gyomu-karugamo.com" class="btn-p">無料で使ってみる</a>
         <a href="#how" class="btn-g">使い方を見る →</a>
@@ -428,19 +416,16 @@ footer{background:var(--brown);padding:38px 40px;text-align:center;}
     <p class="sec-lead">「頼めばいいじゃない」は、実際にはこんなに難しい。</p>
     <div class="pain-grid">
       <div class="pain-card">
-        <img src="https://gyomu-karugamo.com/assets/kamo01.png" alt="" class="pain-kamo-main">
         <div class="pain-quote">「また自分が言わないといけない」の消耗</div>
         <div class="pain-body">毎回タイミングを見て言葉を選んでお願いする。<br>それだけで体力を使う。<br>察してほしいのに、察してもらえない。</div>
         <img src="https://gyomu-karugamo.com/assets/kamo01.png" alt="" class="pain-kamo">
       </div>
       <div class="pain-card">
-        <img src="https://gyomu-karugamo.com/assets/kamo02.png" alt="" class="pain-kamo-main">
         <div class="pain-quote">「言ったのに忘れてた」が積み重なる</div>
         <div class="pain-body">お願いしたことを忘れられると、怒りよりも先に疲弊する。<br>また言わないといけない、という絶望感。</div>
         <img src="https://gyomu-karugamo.com/assets/kamo02.png" alt="" class="pain-kamo">
       </div>
       <div class="pain-card">
-        <img src="https://gyomu-karugamo.com/assets/kamo03.png" alt="" class="pain-kamo-main">
         <div class="pain-quote">「自分がどれだけやっているか」が見えない</div>
         <div class="pain-body">家事も育児も、どれだけやっても数字にならない。<br>「自分ばかり」という感覚があっても、証明する方法がない。</div>
         <img src="https://gyomu-karugamo.com/assets/kamo03.png" alt="" class="pain-kamo">
