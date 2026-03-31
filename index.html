@@ -68,10 +68,14 @@
   --brown-mid: #7a5c4a;
   --brown-light: #c4a882;
   --orange: #e8632a;
-  --orange-light: #f5a06e;
   --orange-pale: #fdeede;
   --gray: #ece7de;
-  --white: #ffffff;
+  --line-green: #06c755;
+  --ink: #1a1714;
+  --mist: #8a9a96;
+  --border: rgba(26,23,20,0.08);
+  --radius: 16px;
+  --radius-sm: 10px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -93,44 +97,155 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .hero-title{font-family:'Noto Serif JP',serif;font-weight:900;font-size:clamp(1.85rem,3.6vw,2.8rem);line-height:1.5;color:var(--brown);}
 .hero-title .hl{color:var(--green);position:relative;}
 .hero-title .hl::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:2px;background:var(--green-mid);border-radius:2px;opacity:.5;}
-.hero-sub{font-size:.97rem;color:var(--brown-mid);margin:20px 0 12px;line-height:2;}
+.hero-sub{font-size:.97rem;color:var(--brown-mid);margin:20px 0 28px;line-height:2;}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
 .btn-p{background:var(--green);color:white;padding:15px 34px;border-radius:8px;font-size:.93rem;font-weight:500;text-decoration:none;transition:all .25s;box-shadow:0 6px 20px rgba(74,124,111,.25);}
 .btn-p:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 12px 28px rgba(74,124,111,.35);}
 .btn-g{color:var(--brown-mid);font-size:.875rem;text-decoration:none;border-bottom:1px solid var(--brown-light);padding-bottom:2px;transition:all .2s;}
 .btn-g:hover{color:var(--green);border-color:var(--green);}
 
-/* HERO MOCKUP - 実際のスクリーンショット使用 */
-.hero-visual{position:relative;display:flex;gap:20px;align-items:flex-start;justify-content:center;}
-.screen-label{text-align:center;font-size:.7rem;color:var(--brown-mid);margin-bottom:8px;letter-spacing:.06em;}
+/* HERO VISUAL - 実際のスクリーンショット使用 */
+.hero-visual{position:relative;display:flex;gap:16px;align-items:flex-start;justify-content:center;}
 .screen-wrap{flex:1;max-width:200px;}
-.screenshot-img{width:100%;border-radius:22px;box-shadow:0 20px 56px rgba(61,43,31,.18);display:block;}
-.line-screenshot{width:100%;border-radius:16px;box-shadow:0 12px 36px rgba(61,43,31,.14);display:block;}
+.screen-label{text-align:center;font-size:.7rem;color:var(--brown-mid);margin-bottom:8px;letter-spacing:.06em;}
 
-/* LINE DEMO in feature */
-.line-demo{background:white;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(61,43,31,.07);border:1px solid rgba(196,168,130,.15);}
+/* アプリ画面（実際のUIを再現） */
+.app-screen{background:#f5f0e8;border-radius:22px;overflow:hidden;box-shadow:0 20px 56px rgba(26,23,20,.18);border:1px solid rgba(26,23,20,.06);}
+.app-header{background:rgba(250,247,242,0.97);border-bottom:1px solid var(--border);padding:10px 12px;display:flex;align-items:center;justify-content:space-between;}
+.app-brand{display:flex;align-items:center;gap:6px;}
+.app-brand img{width:20px;height:20px;object-fit:contain;}
+.app-brand-name{font-family:'Noto Serif JP',serif;font-size:.72rem;font-weight:600;color:var(--ink);}
+.app-logout{font-size:.55rem;color:var(--mist);border:1px solid var(--border);border-radius:999px;padding:2px 7px;background:white;}
+.app-tabs{display:flex;border-bottom:1px solid var(--border);background:rgba(250,247,242,0.97);overflow:hidden;}
+.app-tab{flex:1;padding:7px 2px;font-size:.52rem;text-align:center;color:var(--mist);border-bottom:2px solid transparent;white-space:nowrap;}
+.app-tab.act{color:var(--green);border-bottom-color:var(--green);font-weight:500;}
+.app-body{padding:10px;}
+
+/* ホームヒーローカード */
+.app-hero-card{background:linear-gradient(135deg,#4a7c6f 0%,#6a9e8f 100%);border-radius:12px;padding:14px;color:white;margin-bottom:8px;position:relative;overflow:hidden;}
+.app-hero-card img{position:absolute;right:8px;bottom:-3px;width:44px;height:44px;object-fit:contain;opacity:.22;}
+.app-hero-label{font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-bottom:4px;}
+.app-hero-title{font-size:.82rem;font-weight:600;line-height:1.4;}
+
+/* LINE送信ボタン */
+.app-line-btns{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:8px;}
+.app-line-btn{background:var(--line-green);color:white;border-radius:10px;padding:7px 4px;font-size:.52rem;font-weight:500;text-align:center;display:flex;align-items:center;justify-content:center;gap:3px;line-height:1.3;}
+
+/* クイック統計 */
+.app-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:8px;}
+.app-stat{background:white;border:1px solid var(--border);border-radius:8px;padding:7px 4px;text-align:center;}
+.app-stat-num{font-size:1.1rem;font-weight:300;color:var(--green);line-height:1;}
+.app-stat-lbl{font-size:.48rem;color:var(--mist);margin-top:2px;}
+
+/* タスクカード */
+.app-task-card{background:white;border:1px solid var(--border);border-radius:12px;padding:10px;}
+.app-date-nav{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:8px;}
+.app-nav-btn{font-size:.7rem;color:var(--mist);border:1px solid var(--border);border-radius:4px;padding:1px 5px;background:white;}
+.app-date-lbl{font-size:.72rem;font-weight:500;color:var(--ink);}
+.app-group-lbl{font-size:.52rem;color:var(--mist);letter-spacing:.06em;margin-bottom:5px;display:flex;align-items:center;gap:4px;}
+.app-group-lbl::after{content:'';flex:1;height:1px;background:var(--border);}
+.app-task-item{display:flex;align-items:center;gap:6px;padding:6px 7px;border:1px solid var(--border);border-radius:7px;margin-bottom:4px;background:white;}
+.app-check{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.5rem;}
+.app-check.done-g{background:var(--green);border-color:var(--green);color:white;}
+.app-check.partner{border-color:var(--line-green);}
+.app-check.partner.done{background:var(--line-green);border-color:var(--line-green);color:white;}
+.app-task-name{flex:1;font-size:.65rem;color:var(--ink);}
+.app-task-badge{font-size:.45rem;background:#f0ece6;color:var(--mist);padding:2px 5px;border-radius:4px;}
+.app-add-link{font-size:.6rem;color:var(--green);margin-top:5px;}
+
+/* LINE画面（実際のLINEに近い） */
+.line-screen{background:#ece5dd;border-radius:22px;overflow:hidden;box-shadow:0 20px 56px rgba(26,23,20,.18);border:1px solid rgba(26,23,20,.06);}
+.line-topbar{background:#128c7e;padding:10px 12px;display:flex;align-items:center;gap:7px;}
+.line-back{color:white;font-size:.8rem;opacity:.9;}
+.line-av{width:26px;height:26px;background:white;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.line-av img{width:19px;height:19px;object-fit:contain;}
+.line-name{color:white;font-size:.72rem;font-weight:500;flex:1;}
+.line-chat{padding:8px;display:flex;flex-direction:column;gap:6px;min-height:280px;}
+.l-msg-left{align-self:flex-start;display:flex;gap:5px;align-items:flex-end;max-width:90%;}
+.l-msg-right{align-self:flex-end;max-width:85%;}
+.l-av-sm{width:22px;height:22px;flex-shrink:0;border-radius:50%;overflow:hidden;background:white;}
+.l-av-sm img{width:16px;height:16px;object-fit:contain;margin:3px;}
+.l-bubble{background:white;border-radius:3px 10px 10px 10px;padding:7px 9px;font-size:.62rem;color:#111;line-height:1.5;}
+.l-bubble-right{background:#dcf8c6;border-radius:10px 3px 10px 10px;padding:6px 9px;font-size:.62rem;color:#111;line-height:1.5;}
+.l-time{font-size:.48rem;color:rgba(0,0,0,.38);margin-top:2px;text-align:right;}
+.l-task-card{background:white;border-radius:3px 10px 10px 10px;overflow:hidden;font-size:.6rem;}
+.l-task-head{background:#e8f0ee;padding:5px 8px;font-size:.58rem;font-weight:500;color:var(--green);}
+.l-task-body{padding:6px 8px;}
+.l-task-row{display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid #f0f0f0;color:#444;}
+.l-task-row:last-child{border-bottom:none;}
+.l-chk{width:12px;height:12px;border-radius:3px;border:1.5px solid;flex-shrink:0;}
+.l-chk.g{border-color:var(--green);}
+.l-chk.dg{background:var(--green);border-color:var(--green);}
+.l-sep{border:none;border-top:1px solid rgba(0,0,0,.06);margin:4px 0;}
+.l-section-lbl{font-size:.55rem;font-weight:500;color:var(--mist);margin:3px 0 2px;}
+.l-menu-bar{background:white;border-top:1px solid var(--border);padding:6px 8px;display:flex;gap:4px;}
+.l-menu-btn{flex:1;background:#e8f0ee;color:var(--green-dark);border-radius:5px;padding:5px 3px;font-size:.5rem;font-weight:500;text-align:center;}
+.l-complete-badge{background:var(--green);color:white;border-radius:10px 3px 10px 10px;padding:5px 8px;font-size:.58rem;align-self:flex-end;}
+
+/* SECTIONS */
+.section{padding:88px 40px;}
+.sec-inner{max-width:1100px;margin:0 auto;}
+.sec-eye{display:block;font-size:.72rem;font-weight:500;color:var(--green);letter-spacing:.15em;text-transform:uppercase;margin-bottom:13px;}
+.sec-title{font-family:'Noto Serif JP',serif;font-weight:900;font-size:clamp(1.5rem,2.8vw,2rem);line-height:1.55;color:var(--brown);margin-bottom:13px;}
+.sec-lead{font-size:.965rem;color:var(--brown-mid);line-height:1.95;max-width:520px;}
+
+/* PAIN */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;}
+.pain-card{background:white;border-radius:12px;padding:30px 24px 26px;border:1px solid rgba(196,168,130,.2);position:relative;overflow:hidden;min-height:180px;}
+.pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);}
+.pain-kamo{position:absolute;bottom:-8px;right:-8px;width:100px;height:100px;object-fit:contain;opacity:.15;pointer-events:none;}
+.pain-quote{font-family:'Noto Serif JP',serif;font-size:.92rem;font-weight:700;color:var(--brown);margin-bottom:10px;line-height:1.6;}
+.pain-body{font-size:.82rem;color:var(--brown-mid);line-height:1.85;position:relative;z-index:1;}
+
+/* HOW + FEATURES combined */
+.how-bg{background:var(--gray);padding:88px 40px;}
+.steps-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:52px;}
+.sf-card{background:white;border-radius:12px;padding:28px;border:1px solid rgba(196,168,130,.15);display:flex;gap:18px;align-items:flex-start;transition:all .25s;}
+.sf-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(61,43,31,.08);}
+.sf-num{width:40px;height:40px;background:var(--green);color:white;border-radius:8px;font-size:.85rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sf-icon{width:40px;height:40px;background:var(--green-pale);border-radius:8px;font-size:1.3rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(74,124,111,.15);}
+.sf-title{font-family:'Noto Serif JP',serif;font-weight:700;font-size:.95rem;color:var(--brown);margin-bottom:6px;line-height:1.5;}
+.sf-desc{font-size:.82rem;color:var(--brown-mid);line-height:1.85;}
+.sf-note{display:inline-flex;align-items:center;gap:5px;background:var(--green-pale);color:var(--green-dark);font-size:.7rem;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:10px;border:1px solid rgba(74,124,111,.2);}
+.sf-card.wide{grid-column:span 2;}
+.sf-wide-inner{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;}
+
+/* LINE DEMO（実際のLINE画面スタイルで大きく） */
+.line-demo-lg{background:#ece5dd;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(61,43,31,.1);}
 .ld-bar{background:#128c7e;padding:10px 14px;display:flex;align-items:center;gap:8px;}
 .ld-av{width:28px;height:28px;background:white;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .ld-av img{width:20px;height:20px;object-fit:contain;}
-.ld-name{color:white;font-size:.78rem;font-weight:500;}
-.ld-body{background:#ece5dd;padding:10px;display:flex;flex-direction:column;gap:7px;}
-.ld-card{background:white;border-radius:4px 12px 12px 12px;overflow:hidden;}
-.ld-card-head{background:var(--green-pale);padding:7px 10px;font-size:.68rem;font-weight:500;color:var(--green);}
+.ld-name{color:white;font-size:.78rem;font-weight:500;flex:1;}
+.ld-body{padding:10px;display:flex;flex-direction:column;gap:7px;}
+.ld-msg-left{align-self:flex-start;display:flex;gap:6px;align-items:flex-end;max-width:92%;}
+.ld-av-sm{width:24px;height:24px;border-radius:50%;overflow:hidden;background:white;flex-shrink:0;}
+.ld-av-sm img{width:17px;height:17px;object-fit:contain;margin:3.5px;}
+.ld-card{background:white;border-radius:3px 12px 12px 12px;overflow:hidden;font-size:.75rem;}
+.ld-card-head{background:var(--green-pale);padding:7px 10px;font-size:.7rem;font-weight:500;color:var(--green);}
 .ld-card-body{padding:8px 10px;}
-.ld-lbl{font-size:.62rem;font-weight:500;margin-bottom:3px;}
+.ld-lbl{font-size:.64rem;font-weight:500;margin-bottom:3px;}
 .ld-lbl.g{color:var(--green);}
 .ld-lbl.o{color:var(--brown-mid);}
-.ld-ti{display:flex;align-items:center;gap:6px;font-size:.68rem;color:var(--brown-mid);padding:3px 0;border-bottom:1px solid var(--gray);}
+.ld-ti{display:flex;align-items:center;gap:6px;font-size:.7rem;color:#555;padding:3px 0;border-bottom:1px solid #f0f0f0;}
 .ld-ti:last-child{border-bottom:none;}
 .ld-dot{width:11px;height:11px;border-radius:3px;border:1.5px solid;flex-shrink:0;}
 .ld-dot.g{border-color:var(--green);}
 .ld-dot.o{border-color:var(--orange);}
 .ld-dot.dg{background:var(--green);border-color:var(--green);}
 .ld-sep{border:none;border-top:1px solid rgba(0,0,0,.07);margin:5px 0;}
-.ld-btns{display:flex;gap:5px;padding:6px 10px;background:white;border-top:1px solid var(--gray);}
-.ld-btn{flex:1;background:var(--green-pale);color:var(--green-dark);border:1px solid rgba(74,124,111,.2);border-radius:5px;padding:4px;font-size:.58rem;font-weight:500;text-align:center;}
-.ld-reply-wrap{display:flex;justify-content:flex-end;}
-.ld-reply{background:#dcf8c6;border-radius:12px 4px 12px 12px;padding:6px 10px;font-size:.7rem;color:var(--brown);}
+.ld-right{align-self:flex-end;}
+.ld-bubble-r{background:#dcf8c6;border-radius:10px 2px 10px 10px;padding:6px 10px;font-size:.7rem;color:#111;}
+.ld-bubble-complete{background:var(--green);color:white;border-radius:10px 2px 10px 10px;padding:6px 10px;font-size:.7rem;}
+.ld-btns{display:flex;gap:5px;padding:6px 10px;background:white;border-top:1px solid var(--border);}
+.ld-btn{flex:1;background:var(--green-pale);color:var(--green-dark);border:1px solid rgba(74,124,111,.2);border-radius:5px;padding:4px;font-size:.6rem;font-weight:500;text-align:center;}
+.ld-time{font-size:.56rem;color:rgba(0,0,0,.35);margin-top:2px;}
+
+/* LINE コマンド説明 */
+.line-cmd-box{background:white;border-radius:12px;padding:16px;border:1px solid rgba(196,168,130,.15);margin-top:12px;}
+.line-cmd-title{font-size:.72rem;font-weight:500;color:var(--brown);margin-bottom:10px;}
+.line-cmd-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;}
+.line-cmd-tag{background:var(--green);color:white;border-radius:5px;padding:2px 8px;font-size:.65rem;font-weight:500;flex-shrink:0;margin-top:2px;}
+.line-cmd-desc{font-size:.75rem;color:var(--brown-mid);line-height:1.6;}
 
 /* PRICING */
 .pricing-section{padding:88px 40px;}
@@ -194,7 +309,7 @@ footer{background:var(--brown);padding:38px 40px;text-align:center;}
   .sf-card.wide{grid-column:span 1;}
   .sf-wide-inner{grid-template-columns:1fr;}
   .pricing-section{padding:60px 20px;}
-  .price-grid{grid-template-columns:1fr!important;max-width:360px;}
+  .price-grid{grid-template-columns:1fr;max-width:360px;}
   .cta-s{padding:80px 20px;}
   footer{padding:30px 20px;}
 }
@@ -231,14 +346,17 @@ footer{background:var(--brown);padding:38px 40px;text-align:center;}
       </div>
     </div>
 
+    <!-- 実際のスクリーンショット -->
     <div class="hero-visual fu fu3">
       <div class="screen-wrap">
-        <div class="screen-label">📱 自分の画面（ホーム）</div>
-        <img src="app_home.png" alt="業務かるがもアプリ ホーム画面 - 自分とパートナーのタスクを一画面で管理" class="screenshot-img">
+        <div class="screen-label">📱 自分の画面（アプリ）</div>
+        <img src="https://gyomu-karugamo.com/assets/app01.png" alt="業務かるがも アプリ画面"
+          style="width:100%;border-radius:22px;box-shadow:0 20px 56px rgba(26,23,20,.18);">
       </div>
       <div class="screen-wrap">
         <div class="screen-label">💬 パートナーのLINE</div>
-        <img src="line_chat2.png" alt="業務かるがも LINEでのタスク確認・完了報告" class="screenshot-img">
+        <img src="https://gyomu-karugamo.com/assets/app02.png" alt="業務かるがも LINEの画面"
+          style="width:100%;border-radius:22px;box-shadow:0 20px 56px rgba(26,23,20,.18);">
       </div>
     </div>
   </div>
@@ -274,7 +392,7 @@ footer{background:var(--brown);padding:38px 40px;text-align:center;}
 <section class="how-bg" id="how">
   <div class="sec-inner">
     <span class="sec-eye">How it works</span>
-    <h2 class="sec-title">使い方はシンプル。すぐ始められる。</h2>
+    <h2 class="sec-title">4つの仕組みで、毎日が変わる</h2>
     <p class="sec-lead">パートナーはアプリ不要。今日から始められます。</p>
 
     <div class="steps-feat-grid">
@@ -282,8 +400,8 @@ footer{background:var(--brown);padding:38px 40px;text-align:center;}
       <div class="sf-card">
         <div class="sf-num">1</div>
         <div>
-          <div class="sf-title">業務かるがも公式LINEを友だち追加</div>
-          <div class="sf-desc">パートナーに公式LINEを友だち追加してもらいます。<br>4桁の連携コードを送るだけで設定完了。初回のみです。</div>
+          <div class="sf-title">LINE連携を設定する</div>
+          <div class="sf-desc">パートナーに公式LINEを友だち追加してもらい、4桁の連携コードを送るだけで設定完了です。<br>初回1回だけの設定で、以降は自動で届きます。</div>
         </div>
       </div>
 
@@ -291,7 +409,7 @@ footer{background:var(--brown);padding:38px 40px;text-align:center;}
         <div class="sf-num">2</div>
         <div>
           <div class="sf-title">タスクを登録する</div>
-          <div class="sf-desc">自分がやること・パートナーへのお願いを分けて登録します。<br>毎日・平日・毎週など繰り返し設定もできます。</div>
+          <div class="sf-desc">自分がやること・パートナーへのお願いを分けて登録します。<br>繰り返し設定（毎日・毎週・平日のみ等）もできるので、毎回入力する手間がありません。</div>
         </div>
       </div>
 
@@ -302,24 +420,37 @@ footer{background:var(--brown);padding:38px 40px;text-align:center;}
             <div class="sf-title">パートナーのLINEにタスクが届く。<br>完了もLINEで報告できる。</div>
             <div class="sf-desc">登録したタスクがパートナーのLINEに自動送信されます。<br>パートナーはボタンをタップするだけで完了報告ができます。<br>両者のタスク状況が一覧で見えるので、「やった・やらない」の水掛け論がなくなります。</div>
             <div class="sf-note">✓ パートナーのアプリ登録不要</div>
+            <!-- LINEコマンド説明 -->
+            <div class="line-cmd-box">
+              <div class="line-cmd-title">LINEで使えるコマンド</div>
+              <div class="line-cmd-item" style="align-items:center;">
+                <span class="line-cmd-tag">今日</span>
+                <span class="line-cmd-desc">今日のタスク一覧を確認</span>
+              </div>
+              <div class="line-cmd-item" style="align-items:center;">
+                <span class="line-cmd-tag">進捗</span>
+                <span class="line-cmd-desc">今日の達成度を確認</span>
+              </div>
+            </div>
           </div>
-          <img src="line_chat1.png" alt="業務かるがも LINEでのタスク通知・完了報告の実際の画面" class="line-screenshot" style="max-width:220px;">
+          <img src="https://gyomu-karugamo.com/assets/app03.png" alt="LINEのやり取り画面"
+            style="width:100%;border-radius:12px;box-shadow:0 6px 20px rgba(61,43,31,.1);">
         </div>
       </div>
 
       <div class="sf-card">
-        <div class="sf-icon">🔁</div>
+        <div class="sf-icon">📲</div>
         <div>
-          <div class="sf-title">繰り返しタスクは自動で送信</div>
-          <div class="sf-desc">「平日：保育園の送り」「毎週：ゴミ出し」など繰り返しタスクは一度登録すれば自動でLINEに届きます。<br>毎日・平日のみ・毎週・毎月から選べます。</div>
+          <div class="sf-title">更新・リマインドをLINEで送信</div>
+          <div class="sf-desc">タスクを追加・変更したら「タスクの更新を知らせる」ボタンでパートナーに通知できます。<br>未完了のタスクがあれば「未完了タスクをリマインド」で催促も可能です。</div>
         </div>
       </div>
 
       <div class="sf-card">
         <div class="sf-icon">📊</div>
         <div>
-          <div class="sf-title">月次レポートで負担を見える化</div>
-          <div class="sf-desc">完了タスク数・完了率・担当バランスが月ごとに集計されます。<br>SNSシェア用の画像も生成できます（Standardプラン）。</div>
+          <div class="sf-title">月末に負担レポートが自動生成</div>
+          <div class="sf-desc">今月自分がやったこと・お願いしたこと・パートナーの完了率が自動集計されます。<br>「感情の話」ではなく「事実の話」ができます。</div>
         </div>
       </div>
 
@@ -333,44 +464,49 @@ footer{background:var(--brown);padding:38px 40px;text-align:center;}
     <span class="sec-eye">Pricing</span>
     <h2 class="sec-title">まずは無料で始めてみて</h2>
     <p class="sec-lead" style="margin:0 auto">タスク登録・LINE送信は無料で試せます。</p>
-    <div class="price-grid" style="max-width:960px;grid-template-columns:repeat(3,1fr);">
+    <div class="price-grid" style="grid-template-columns:1fr 1fr 1fr;max-width:960px;">
       <div class="pc">
         <div class="pc-plan">Free</div>
         <div class="pc-price">¥0</div>
         <div class="pc-per">/ 月、ずっと無料</div>
         <ul class="pc-list">
           <li>タスク登録・完了管理</li>
+          <li>自分／パートナーのタスク分離管理</li>
           <li>LINE送信（月10件まで）</li>
-          <li class="off">繰り返しタスク</li>
-          <li class="off">月次レポート</li>
+          <li class="off">繰り返しタスクの作成</li>
+          <li class="off">月次レポート自動生成</li>
           <li class="off">毎日の定時通知</li>
         </ul>
         <a href="https://app.gyomu-karugamo.com" class="pc-btn free-btn">無料で始める</a>
       </div>
       <div class="pc pro">
-        <div class="pc-badge">おすすめ・14日無料</div>
+        <div class="pc-badge">おすすめ</div>
         <div class="pc-plan">Standard</div>
         <div class="pc-price">¥480</div>
         <div class="pc-per">/ 月・いつでも解約可能</div>
         <ul class="pc-list">
           <li>タスク登録・完了管理</li>
+          <li>自分／パートナーのタスク分離管理</li>
           <li>LINE送信（月30件）</li>
-          <li>繰り返しタスク</li>
-          <li>月次レポート</li>
+          <li>繰り返しタスクの作成</li>
+          <li>月次レポート自動生成</li>
           <li>毎日の定時通知</li>
         </ul>
         <a href="https://app.gyomu-karugamo.com" class="pc-btn pro-btn">14日間無料で試す</a>
       </div>
-      <div class="pc" style="border-color:rgba(74,124,111,.3);">
+      <div class="pc" style="border-color:var(--brown-light);">
         <div class="pc-plan">Premium</div>
-        <div class="pc-price" style="font-size:2rem;">近日公開</div>
-        <div class="pc-per">/ 月</div>
+        <div class="pc-price">¥780</div>
+        <div class="pc-per">/ 月・いつでも解約可能</div>
         <ul class="pc-list">
-          <li>Standardの全機能</li>
-          <li>LINE送信（無制限）</li>
-          <li class="off">詳細近日公開</li>
+          <li>タスク登録・完了管理</li>
+          <li>自分／パートナーのタスク分離管理</li>
+          <li>LINE送信（月100件）</li>
+          <li>繰り返しタスクの作成</li>
+          <li>月次レポート自動生成</li>
+          <li>毎日の定時通知</li>
         </ul>
-        <a href="https://app.gyomu-karugamo.com" class="pc-btn free-btn" style="opacity:.6;pointer-events:none;">Coming Soon</a>
+        <a href="https://app.gyomu-karugamo.com" class="pc-btn" style="background:var(--brown);color:white;border-color:transparent;">試してみる</a>
       </div>
     </div>
     <p class="price-note">¥480 / 月 = 1日16円。パートナーとの喧嘩が1回減ったらお釣りがきます。</p>
