@@ -247,6 +247,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .line-cmd-tag{background:var(--green);color:white;border-radius:5px;padding:2px 8px;font-size:.65rem;font-weight:500;flex-shrink:0;margin-top:2px;}
 .line-cmd-desc{font-size:.75rem;color:var(--brown-mid);line-height:1.6;}
 
+.line-shot-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  align-items:start;
+}
+
+.line-shot{
+  width:100%;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(61,43,31,.1);
+  display:block;
+  background:white;
+}
+
+/* スマホでは縦並び */
+@media(max-width:900px){
+  .line-shot-grid{
+    grid-template-columns:1fr;
+  }
+}
+
 /* PRICING */
 .pricing-section{padding:88px 40px;}
 .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:740px;margin:52px auto 0;}
@@ -433,8 +455,18 @@ footer{background:var(--brown);padding:38px 40px;text-align:center;}
               </div>
             </div>
           </div>
-          <img src="https://gyomu-karugamo.com/assets/app03.png" alt="LINEのやり取り画面"
-            style="width:100%;border-radius:12px;box-shadow:0 6px 20px rgba(61,43,31,.1);">
+          <div class="line-shot-grid">
+            <img
+              src="https://gyomu-karugamo.com/assets/line-talk.png"
+              alt="LINEのトーク画面"
+              class="line-shot"
+            >
+            <img
+              src="https://gyomu-karugamo.com/assets/line-menu.png"
+              alt="LINEのリッチメニューからアクセスできる画面"
+              class="line-shot"
+            >
+          </div>
         </div>
       </div>
 
