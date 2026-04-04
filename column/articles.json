@@ -25,5 +25,59 @@
     "category": "タスク管理",
     "readingTime": "4分",
     "image": "https://gyomu-karugamo.com/assets/icon.png"
+  },
+  {
+    "id": "article-04",
+    "title": "家事分担の話し合いで喧嘩にならない伝え方",
+    "date": "2026.04.05",
+    "description": "責めずに伝えるにはどうしたらいいのか。家事分担の話し合いを壊しにくい伝え方を整理します。",
+    "category": "家事分担",
+    "readingTime": "4分",
+    "image": "https://gyomu-karugamo.com/assets/icon.png"
+  },
+  {
+    "id": "article-05",
+    "title": "パートナーが家事を忘れるときに見直したいこと",
+    "date": "2026.04.05",
+    "description": "何度伝えても忘れられる。そのとき、相手を責める前に見直したいポイントをまとめました。",
+    "category": "パートナー",
+    "readingTime": "4分",
+    "image": "https://gyomu-karugamo.com/assets/icon.png"
+  },
+  {
+    "id": "article-06",
+    "title": "育児タスクはなぜ偏りやすいのか",
+    "date": "2026.04.05",
+    "description": "育児は細かく、終わりが見えにくいからこそ偏りやすい。負担の正体を整理します。",
+    "category": "育児",
+    "readingTime": "4分",
+    "image": "https://gyomu-karugamo.com/assets/icon.png"
+  },
+  {
+    "id": "article-07",
+    "title": "家事を見える化すると夫婦関係はどう変わる？",
+    "date": "2026.04.05",
+    "description": "見える化で何が変わるのか。感情論から事実ベースの会話に変わる効果を解説します。",
+    "category": "見える化",
+    "readingTime": "3分",
+    "image": "https://gyomu-karugamo.com/assets/icon.png"
+  },
+  {
+    "id": "article-08",
+    "title": "共働き夫婦のタスク管理を続けるコツ",
+    "date": "2026.04.05",
+    "description": "一度作って終わりでは続きません。無理なくタスク管理を続けるためのコツを紹介します。",
+    "category": "タスク管理",
+    "readingTime": "4分",
+    "image": "https://gyomu-karugamo.com/assets/icon.png"
+  },
+  {
+    "id": "article-09",
+    "title": "家事分担を感覚ではなく事実で話すために必要なこと",
+    "date": "2026.04.05",
+    "description": "「私ばかり」を感覚のままぶつけないために、事実で話す土台の作り方を整理します。",
+    "category": "家事分担",
+    "readingTime": "4分",
+    "image": "https://gyomu-karugamo.com/assets/icon.png"
   }
 ]
