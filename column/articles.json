@@ -2,19 +2,28 @@
   {
     "id": "article-01",
     "title": "家事分担でモヤモヤする本当の理由",
-    "date": "2026.04",
-    "description": "なぜ「やってるのに伝わらない」のか。その構造を解説します。"
+    "date": "2026.04.04",
+    "description": "「自分ばかり」と感じるのに、うまく言葉にできない。そのモヤモヤの正体を整理します。",
+    "category": "家事分担",
+    "readingTime": "3分",
+    "image": "https://gyomu-karugamo.com/assets/icon.png"
   },
   {
     "id": "article-02",
     "title": "共働きなのに私ばかり疲れる理由",
-    "date": "2026.04",
-    "description": "負担が偏る原因は“量”ではなく“管理”にあります。"
+    "date": "2026.04.04",
+    "description": "負担が偏る原因は、家事の量だけではありません。見えにくい“管理コスト”を解説します。",
+    "category": "共働き",
+    "readingTime": "4分",
+    "image": "https://gyomu-karugamo.com/assets/icon.png"
   },
   {
     "id": "article-03",
     "title": "家事分担をうまく回す3つのルール",
-    "date": "2026.04",
-    "description": "喧嘩にならないための具体ルールを紹介します。"
+    "date": "2026.04.04",
+    "description": "喧嘩になりにくく、続けやすい家事分担のルールを3つに絞って紹介します。",
+    "category": "タスク管理",
+    "readingTime": "4分",
+    "image": "https://gyomu-karugamo.com/assets/icon.png"
   }
 ]
